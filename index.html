@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f6ef">
+  <title>Fieldnote — Smart Irrigation</title>
+  <style>
+    :root{color-scheme:light;--ink:#18392e;--muted:#718178;--line:#e4e9df;--green:#246b50;--mint:#e7f1e9;--paper:#fff;--bg:#f4f6ef;--amber:#a7651d;--amber-bg:#fff1df;--blue:#386b85;--blue-bg:#eaf4f7;--shadow:0 12px 35px #263c2910}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.01em}button{font:inherit}.shell{max-width:1200px;margin:auto;padding:26px 34px 44px}.topbar{height:56px;display:flex;align-items:center;justify-content:space-between;margin-bottom:34px}.brand{display:flex;align-items:center;gap:11px;font-weight:750;font-size:17px;letter-spacing:-.035em}.brand-mark{width:34px;height:34px;border-radius:11px;background:var(--green);display:grid;place-items:center;color:white}.brand-mark svg{width:20px}.top-right{display:flex;align-items:center;gap:16px;color:var(--muted);font-size:13px}.connection{display:flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--line);background:#ffffffb8;border-radius:999px;color:var(--ink);font-weight:600}.dot{width:8px;height:8px;background:#d39b50;border-radius:50%;box-shadow:0 0 0 3px #d39b501c}.connection.live .dot{background:#3b9a68;box-shadow:0 0 0 3px #3b9a681e}.hero{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:22px;gap:20px}.eyebrow{font-size:11px;font-weight:750;letter-spacing:.13em;text-transform:uppercase;color:#718477;margin:0 0 8px}.hero h1{font-size:clamp(27px,4vw,38px);letter-spacing:-.05em;line-height:1.08;margin:0;font-weight:720}.subtitle{margin:9px 0 0;color:var(--muted);font-size:14px}.updated{font-size:12px;color:var(--muted);white-space:nowrap;padding-bottom:4px}.banner{display:flex;gap:14px;align-items:center;padding:17px 20px;border:1px solid #d8e7da;background:#edf5ed;border-radius:16px;margin-bottom:20px}.banner.warn{background:var(--amber-bg);border-color:#f0debd}.banner-icon{width:39px;height:39px;flex:0 0 39px;border-radius:12px;display:grid;place-items:center;background:#dbeadf;color:var(--green)}.warn .banner-icon{background:#f6dfbd;color:var(--amber)}.banner-icon svg{width:20px}.banner-copy{flex:1}.banner-copy strong{font-size:14px;display:block}.banner-copy span{font-size:12px;color:#667a6c}.banner-tag{font-size:11px;text-transform:uppercase;letter-spacing:.08em;font-weight:750;color:var(--green);padding:6px 9px;border-radius:7px;background:#dcebdd;white-space:nowrap}.warn .banner-tag{color:var(--amber);background:#f8e4c6}.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px 19px;box-shadow:var(--shadow);min-width:0}.metric{min-height:139px}.metric-top{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px;font-weight:600}.metric-icon{width:31px;height:31px;display:grid;place-items:center;border-radius:10px;background:#f0f4ed;color:#54755e}.metric-icon svg{width:17px;height:17px}.value-row{display:flex;align-items:baseline;gap:6px;margin:13px 0 2px}.value{font-size:32px;font-weight:720;letter-spacing:-.06em;line-height:1}.unit{font-size:13px;color:var(--muted)}.metric-note{font-size:11px;color:#7f8c82}.soil-card{grid-column:span 2}.soil-content{display:flex;align-items:center;gap:22px;margin-top:15px}.gauge{width:82px;height:82px;flex:none;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--green) var(--moisture,34%),#edf1e9 0);position:relative}.gauge:before{content:"";position:absolute;inset:7px;background:white;border-radius:50%}.gauge-inner{position:relative;text-align:center}.gauge-inner b{font-size:20px;letter-spacing:-.05em}.gauge-inner small{display:block;color:var(--muted);font-size:9px;margin-top:-3px}.soil-info{flex:1}.soil-info strong{font-size:14px}.soil-info p{margin:3px 0 10px;color:var(--muted);font-size:11px}.range{height:5px;border-radius:9px;background:linear-gradient(90deg,#c87947,#ddc276,#64a17a);position:relative}.range:after{content:"";position:absolute;left:var(--moisture,34%);top:50%;width:11px;height:11px;border:2px solid white;background:var(--green);border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 1px #244a36}.range-labels{display:flex;justify-content:space-between;color:#89958d;font-size:9px;margin-top:7px}.history-card{grid-column:span 2;grid-row:span 2;min-height:286px}.card-heading{display:flex;align-items:flex-start;justify-content:space-between}.card-heading h2,.pump-card h2{font-size:14px;margin:0;font-weight:700;letter-spacing:-.02em}.card-heading p{font-size:11px;color:var(--muted);margin:3px 0 0}.period{font-size:10px;color:var(--muted);padding:5px 8px;border-radius:7px;background:#f3f5f0}.chart-wrap{height:190px;margin-top:20px;position:relative}.chart-wrap canvas{width:100%;height:100%;display:block}.chart-legend{font-size:10px;color:var(--muted);display:flex;align-items:center;gap:7px;margin-top:8px}.legend-dot{width:7px;height:7px;border-radius:50%;background:#448468}.pump-card{grid-column:span 2;display:grid;grid-template-columns:1fr auto;align-items:center;min-height:112px}.pump-state{display:flex;align-items:center;gap:9px;margin-top:8px;color:#77857b;font-size:12px}.pump-icon{width:40px;height:40px;border-radius:12px;background:#f1f3ef;color:#8b9890;display:grid;place-items:center}.pump-icon svg{width:21px}.disabled-btn{border:1px solid #dfe4dd;background:#f5f6f3;color:#929d94;border-radius:10px;padding:10px 13px;font-size:11px;font-weight:700;cursor:not-allowed}.pump-foot{grid-column:1/-1;font-size:10px;color:#89958d;margin-top:2px}.footer{display:flex;justify-content:space-between;align-items:center;margin-top:24px;color:#8a968e;font-size:11px}.footer a{color:#50725c;text-decoration:none}.mode-sample .tag-mode:before{content:"Sample mode"}.mode-live .tag-mode:before{content:"Live · ESP32"}
+    @media(max-width:760px){.shell{padding:18px 18px 30px}.topbar{margin-bottom:27px}.top-right{gap:8px}.clock{display:none}.hero{align-items:flex-start;flex-direction:column;gap:8px;margin-bottom:18px}.updated{padding:0}.grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.soil-card,.history-card,.pump-card{grid-column:span 2}.history-card{grid-row:auto;min-height:260px}.metric{min-height:129px;padding:15px}.metric-icon{width:28px;height:28px}.value{font-size:29px}.banner{padding:14px;gap:11px}.banner-tag{font-size:9px;padding:5px 7px}.chart-wrap{height:180px}.footer{gap:12px;align-items:flex-start;flex-direction:column}}
+    @media(max-width:390px){.shell{padding-left:13px;padding-right:13px}.grid{gap:9px}.card{padding:14px}.metric{padding:13px}.metric-top{font-size:11px}.metric-icon{width:26px;height:26px}.value{font-size:27px}.soil-content{gap:14px}.banner-copy span{font-size:11px}.banner-tag{display:none}}
+    @media(prefers-reduced-motion:no-preference){.card,.banner{animation:arrive .4s ease both}.card:nth-child(2){animation-delay:.04s}.card:nth-child(3){animation-delay:.08s}@keyframes arrive{from{opacity:.55;transform:translateY(5px)}to{opacity:1;transform:none}}}
+    .auto-badge{display:inline-flex;align-items:center;padding:9px 12px;border-radius:10px;background:#e7f1e9;color:#246b50;font-size:10px;font-weight:800;letter-spacing:.08em;white-space:nowrap}.pump-controls,.pump-hint,.pump-error,.pump-foot{grid-column:1/-1}.pump-controls{display:flex;align-items:center;justify-content:flex-start;gap:8px;flex-wrap:wrap;margin-top:12px}.pump-switch,.auto-button{min-height:44px;border:0;border-radius:10px;padding:11px 14px;font:700 12px system-ui;cursor:pointer}.pump-switch{background:#e8eee9;color:#456354}.pump-switch[aria-pressed="true"]{background:#d9eee2;color:#176a45}.pump-switch:focus-visible,.auto-button:focus-visible{outline:3px solid #68a789;outline-offset:2px}.pump-switch:disabled,.auto-button:disabled{opacity:.5;cursor:not-allowed}.auto-button{background:#f3f4f1;color:#5e6b62}.pump-state.is-running .pump-icon{background:#e1f0e5;color:#246b50}.pump-hint{font-size:11px;color:#718178;line-height:1.5;margin:2px 0 0}.pump-error{font-size:11px;color:#a13c37;margin:0;min-height:0}
+  </style>
+</head>
+<body>
+  <main class="shell mode-sample" id="app">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19.5 4.5C11 4.5 5 7.8 5 14a5 5 0 0 0 5 5c6.2 0 9.5-6 9.5-14.5Z"/><path d="M4 21c3-5 7-8 12-11"/></svg></span>Fieldnote</div>
+      <div class="top-right"><span class="clock" id="clock">Local garden</span><span class="connection" id="connection"><i class="dot"></i><span id="connection-label">Waiting for ESP32</span></span></div>
+    </header>
+    <section class="hero"><div><p class="eyebrow">Your growing space</p><h1>Smart irrigation</h1><p class="subtitle">A clear view of what your plants need today.</p></div><div class="updated" id="updated">Showing sample readings</div></section>
+    <section class="banner" id="recommendation" aria-live="polite"><div class="banner-icon" id="rec-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v2m0 14v2M3 12h2m14 0h2M5.64 5.64l1.42 1.42m9.88 9.88 1.42 1.42m0-12.72-1.42 1.42m-9.88 9.88-1.42 1.42"/><circle cx="12" cy="12" r="4"/></svg></div><div class="banner-copy"><strong id="rec-title">Monitor soil before watering</strong><span id="rec-detail">Sample readings are active. Connect the ESP32 to see live conditions.</span></div><span class="banner-tag" id="rec-tag">Sample guidance</span></section>
+    <section class="grid" aria-label="Garden conditions">
+      <article class="card metric soil-card"><div class="metric-top"><span>Soil moisture</span><span class="metric-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c-3 4-6 7-6 11a6 6 0 0 0 12 0c0-4-3-7-6-11Z"/><path d="M9 15a3 3 0 0 0 3 3"/></svg></span></div><div class="soil-content"><div class="gauge" id="gauge"><div class="gauge-inner"><b id="soil-value">34</b><small>percent</small></div></div><div class="soil-info"><strong id="soil-label">A little dry</strong><p id="soil-note">Water when conditions are right.</p><div class="range" id="soil-range"></div><div class="range-labels"><span>Dry</span><span>Good range</span><span>Wet</span></div><div class="metric-note" style="margin-top:8px">Sensor ADC: <span id="soil-raw">—</span></div></div></div></article>
+      <article class="card metric"><div class="metric-top"><span>Air temperature</span><span class="metric-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 14.8V5a3 3 0 0 0-6 0v9.8a5 5 0 1 0 6 0Z"/><path d="M11 11v7"/></svg></span></div><div class="value-row"><span class="value" id="temp-value">26.4</span><span class="unit">°C</span></div><div class="metric-note">Near the sensor</div></article>
+      <article class="card metric"><div class="metric-top"><span>Air humidity</span><span class="metric-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c-3 4-6 7-6 11a6 6 0 0 0 12 0c0-4-3-7-6-11Z"/><path d="M9 15a3 3 0 0 0 3 3"/></svg></span></div><div class="value-row"><span class="value" id="humidity-value">68</span><span class="unit">%</span></div><div class="metric-note">Relative humidity</div></article>
+      <article class="card metric"><div class="metric-top"><span>Rain chance</span><span class="metric-icon" style="color:var(--blue);background:var(--blue-bg)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 18a4 4 0 0 1-.4-8A5.5 5.5 0 0 1 17 9a4.5 4.5 0 0 1 0 9"/><path d="m9 20 1-2m4 2 1-2"/></svg></span></div><div class="value-row"><span class="value" id="rain-value">20</span><span class="unit">%</span></div><div class="metric-note">Forecast probability</div></article>
+      <article class="card metric"><div class="metric-top"><span>Expected rainfall</span><span class="metric-icon" style="color:var(--blue);background:var(--blue-bg)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 18a4 4 0 0 1-.4-8A5.5 5.5 0 0 1 17 9a4.5 4.5 0 0 1 0 9"/><path d="m9 20 1-2m4 2 1-2"/></svg></span></div><div class="value-row"><span class="value" id="rainfall-value">0.4</span><span class="unit">mm</span></div><div class="metric-note">Forecast amount</div></article>
+      <article class="card history-card"><div class="card-heading"><div><h2>Soil moisture history</h2><p>Recent sensor readings</p></div><span class="period">LAST READINGS</span></div><div class="chart-wrap"><canvas id="chart" role="img" aria-label="Line chart showing recent soil moisture readings"></canvas></div><div class="chart-legend"><i class="legend-dot"></i>Soil moisture <span>(%)</span></div></article>
+      <article class="card pump-card"><div><h2>Water pump</h2><div class="pump-state"><span class="pump-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M5 8h10v9H5zM15 11h3l2 2v4h-5"/><path d="M8 8V5h4v3M8 17v2m8-2v2"/><circle cx="9" cy="12.5" r="1.5"/></svg></span><span id="pump-state-text">Off · automatic mode</span></div></div><span class="auto-badge" id="pump-mode-badge">AUTO · GPIO 14</span><div class="pump-controls"><button class="pump-switch" id="pump-switch" type="button" aria-pressed="false" disabled>Turn pump ON</button><button class="auto-button" id="auto-button" type="button" disabled>Return to automatic</button></div><p class="pump-hint" id="pump-hint">Connect the ESP32 to enable controls. In manual mode, the pump runs until you turn it off.</p><p class="pump-error" id="pump-error" role="status" aria-live="polite"></p><p class="pump-foot" id="pump-foot"></p></article>
+    </section>
+    <footer class="footer"><span id="mode-caption">Sample data · Connect an ESP32 to switch to live readings</span><a href="/api/readings" target="_blank" rel="noreferrer">View device API ↗</a></footer>
+  </main>
+<script>
+  const $ = id => document.getElementById(id);
+  let points = [];
+  let pendingPumpCommand = null;
+  let pendingPumpSince = 0;
+  const fmt = (n, digits=0) => Number(n).toFixed(digits);
+  function recommendation(d){
+    const banner=$('recommendation'); banner.classList.remove('warn');
+    if(d.pump_on){
+      $('rec-title').textContent=d.pump_mode==='manual'?'Manual watering running':'Irrigation cycle running'; $('rec-detail').textContent=d.pump_mode==='manual'?'Manual mode stays on until you turn the pump off.':'The automatic pump is running a timed watering cycle.'; $('rec-tag').textContent='Pump on';
+    }else if(d.soil_moisture < 35 && d.rain_probability == null){
+      banner.classList.add('warn'); $('rec-title').textContent='Dry soil · check forecast'; $('rec-detail').textContent='The laptop could not load a weather forecast. Check your local forecast before deciding to water.'; $('rec-tag').textContent='Forecast unavailable';
+    }else if(d.soil_moisture < 35 && d.rain_probability >= 50){
+      $('rec-title').textContent='Hold off — rain may help'; $('rec-detail').textContent='Soil is on the dry side, but rain is likely. Check conditions again later.'; $('rec-tag').textContent='Wait for rain';
+    }else if(d.soil_moisture < 35){
+      banner.classList.add('warn'); $('rec-title').textContent='Water may be needed'; $('rec-detail').textContent='Soil is dry and little rain is forecast. Check the bed before watering.'; $('rec-tag').textContent='Dry soil';
+    }else if(d.soil_moisture >= 65){
+      $('rec-title').textContent='No watering needed'; $('rec-detail').textContent='Soil is already moist. Let it drain and check again later.'; $('rec-tag').textContent='Moist soil';
+    }else{
+      $('rec-title').textContent='Soil is in a comfortable range'; $('rec-detail').textContent='No irrigation is recommended right now. Keep an eye on the trend.'; $('rec-tag').textContent='Looking good';
+    }
+  }
+  function drawChart(){
+    const canvas=$('chart'), rect=canvas.getBoundingClientRect(), dpr=window.devicePixelRatio||1;
+    if(!rect.width||!rect.height)return;
+    canvas.width=Math.round(rect.width*dpr); canvas.height=Math.round(rect.height*dpr);
+    const c=canvas.getContext('2d');c.scale(dpr,dpr);
+    const w=rect.width,h=rect.height,p={l:27,r:8,t:10,b:22}, values=points.map(x=>Number(x.value));
+    const min=0,max=100,innerH=h-p.t-p.b,innerW=w-p.l-p.r;
+    c.font='10px system-ui'; c.textBaseline='middle';
+    [0,50,100].forEach(v=>{const y=p.t+innerH*(1-v/100);c.strokeStyle='#edf0ea';c.lineWidth=1;c.beginPath();c.moveTo(p.l,y);c.lineTo(w-p.r,y);c.stroke();c.fillStyle='#8b988e';c.textAlign='right';c.fillText(v+'%',p.l-7,y)});
+    if(!values.length)return;
+    const xy=values.map((v,i)=>({x:p.l+(values.length===1?.5:i/(values.length-1))*innerW,y:p.t+innerH*(1-v/100)}));
+    const grad=c.createLinearGradient(0,p.t,0,h-p.b);grad.addColorStop(0,'#6fa88b38');grad.addColorStop(1,'#6fa88b00');
+    c.beginPath();xy.forEach((q,i)=>i?c.lineTo(q.x,q.y):c.moveTo(q.x,q.y));c.lineTo(xy.at(-1).x,h-p.b);c.lineTo(xy[0].x,h-p.b);c.closePath();c.fillStyle=grad;c.fill();
+    c.beginPath();xy.forEach((q,i)=>i?c.lineTo(q.x,q.y):c.moveTo(q.x,q.y));c.strokeStyle='#448468';c.lineWidth=2.5;c.lineJoin='round';c.lineCap='round';c.stroke();
+    const last=xy.at(-1);c.beginPath();c.arc(last.x,last.y,4,0,Math.PI*2);c.fillStyle='#fff';c.fill();c.lineWidth=2;c.strokeStyle='#448468';c.stroke();
+    c.textAlign='left';c.textBaseline='alphabetic';c.fillStyle='#89958d';c.fillText('Earlier',p.l,h-4);c.textAlign='right';c.fillText('Latest',w-p.r,h-4);
+  }
+  function render(d){
+    if(pendingPumpCommand){
+      const acknowledged=pendingPumpCommand.mode==='auto'
+        ? d.pump_mode==='auto'
+        : d.pump_mode==='manual'&&!!d.pump_command===pendingPumpCommand.on&&!!d.pump_on===pendingPumpCommand.on;
+      if(acknowledged) pendingPumpCommand=null;
+      else if(Date.now()-pendingPumpSince>20000){
+        pendingPumpCommand=null;
+        $('pump-error').textContent='No pump-state confirmation from the ESP32. Check that the updated sketch is uploaded and the device is online.';
+      }
+    }
+    $('soil-value').textContent=d.soil_moisture==null?'—':fmt(d.soil_moisture);$('soil-raw').textContent=d.soil_raw==null?'—':fmt(d.soil_raw);$('temp-value').textContent=d.temperature==null?'—':fmt(d.temperature,1);$('humidity-value').textContent=d.humidity==null?'—':fmt(d.humidity);$('rain-value').textContent=d.rain_probability==null?'—':fmt(d.rain_probability);$('rainfall-value').textContent=d.expected_rainfall==null?'—':fmt(d.expected_rainfall,1);
+    $('gauge').style.setProperty('--moisture',Math.max(0,Math.min(100,d.soil_moisture))+'%');$('soil-range').style.setProperty('--moisture',Math.max(0,Math.min(100,d.soil_moisture))+'%');
+    $('soil-label').textContent=d.soil_moisture==null?'No sensor reading':d.soil_moisture<35?'A little dry':d.soil_moisture>=65?'Moist':'In good range';$('soil-note').textContent=d.soil_moisture==null?'Waiting for soil sensor data.':d.soil_moisture<35?'Check the forecast before watering.':d.soil_moisture>=65?'No irrigation needed right now.':'Conditions look comfortable.';
+    document.querySelectorAll('.metric')[3].querySelector('.metric-note').textContent=d.weather_source||'Forecast unavailable';
+    document.querySelectorAll('.metric')[4].querySelector('.metric-note').textContent=d.weather_source||'Forecast unavailable';
+    const live=!!d.online, manual=d.pump_mode==='manual', commanded=!!d.pump_command;
+    const pumpActive=!!d.pump_on||(manual&&commanded);
+    document.querySelector('.pump-state').classList.toggle('is-running',!!d.pump_on);
+    const waiting=!!pendingPumpCommand;
+    $('pump-state-text').textContent=waiting
+      ? (pendingPumpCommand.mode==='auto'?'Switching to automatic…':pendingPumpCommand.on?'Starting pump…':'Stopping pump…')
+      : (d.pump_on?'Running':'Off')+' · '+(manual?'manual':'automatic')+' mode';
+    $('pump-mode-badge').textContent=(manual?'MANUAL':'AUTO')+' · GPIO 14';
+    $('pump-switch').setAttribute('aria-pressed',String(pumpActive));
+    $('pump-switch').textContent=window.pumpRequestPending?'Sending command…':waiting?(pendingPumpCommand.mode==='auto'?'Switching mode…':pendingPumpCommand.on?'Starting pump…':'Stopping pump…'):pumpActive?'Turn pump OFF':'Turn pump ON';
+    $('pump-switch').disabled=!live||window.pumpRequestPending||waiting;
+    $('auto-button').disabled=!live||window.pumpRequestPending||waiting;
+    $('pump-hint').textContent=!live?'Connect the ESP32 to enable pump controls.':waiting?'Waiting for the ESP32 to confirm the command.':manual?'Manual mode stays on until you press Turn pump OFF. It stops if the ESP32 loses its dashboard connection.':'Automatic watering starts below 20% soil moisture when the forecast is safe; automatic runs have a 10-second cap and 10-minute soak.';
+    $('pump-foot').textContent='Relay GPIO14 is active-low. Manual commands reach the ESP32 during its next five-second update.';
+    $('app').classList.toggle('mode-live',live);$('app').classList.toggle('mode-sample',!live);$('connection').classList.toggle('live',live);
+    const hadDeviceData=d.source==='esp32';
+    $('connection-label').textContent=live?'ESP32 online':hadDeviceData?'ESP32 offline':'ESP32 offline';$('mode-caption').textContent=live?'Live readings · ESP32 connected':hadDeviceData?'Last device readings · ESP32 offline':'Sample data · Connect an ESP32 to switch to live readings';
+    $('updated').textContent=live?'Last reading · '+new Date(d.updated_at).toLocaleTimeString([], {hour:'numeric',minute:'2-digit'}):hadDeviceData?'Last device reading · '+new Date(d.updated_at).toLocaleTimeString([], {hour:'numeric',minute:'2-digit'}):'Showing sample readings';
+    if(Array.isArray(d.history)&&d.history.length){points=d.history;} else {points.push({value:d.soil_moisture});points=points.slice(-10)}
+    recommendation(d);drawChart();
+  }
+  async function refresh(){try{const r=await fetch('/api/readings',{cache:'no-store'});if(!r.ok)throw Error();render(await r.json())}catch(_){$('connection-label').textContent='Server unavailable';$('updated').textContent='Could not reach the local server'}}
+  async function sendPumpCommand(command){
+    if(window.pumpRequestPending||pendingPumpCommand)return;window.pumpRequestPending=true;$('pump-switch').disabled=true;$('auto-button').disabled=true;$('pump-error').textContent='';
+    const action=command.mode==='auto'?'Switching mode…':command.on?'Starting pump…':'Stopping pump…';
+    $('pump-switch').textContent=action;$('pump-state-text').textContent=action;
+    try{const r=await fetch('/api/pump',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(command)});const data=await r.json();if(!r.ok)throw Error(data.error||'Could not send pump command');pendingPumpCommand=command;pendingPumpSince=Date.now();$('pump-error').textContent='';render(data.readings)}
+    catch(error){pendingPumpCommand=null;$('pump-error').textContent=error.message||'Could not send pump command';}
+    finally{window.pumpRequestPending=false;refresh();}
+  }
+  $('pump-switch').addEventListener('click',()=>{const on=$('pump-switch').getAttribute('aria-pressed')!=='true';sendPumpCommand({mode:'manual',on});});
+  $('auto-button').addEventListener('click',()=>sendPumpCommand({mode:'auto'}));
+  $('clock').textContent=new Intl.DateTimeFormat([], {weekday:'short',month:'short',day:'numeric'}).format(new Date());
+  addEventListener('resize',drawChart);refresh();setInterval(refresh,5000);
+</script>
+</body>
+</html>
